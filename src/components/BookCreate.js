@@ -10,14 +10,18 @@ function BookCreate({ onCeateBook }) {
   };
 
   return (
-    <div>
+    <div className="book-create">
       <form onSubmit={createBooke}>
-        <label>Title</label>
+        <h3>Add a book</h3>
+        <label className="label">Title</label>
         <input
+          className="input"
           value={title}
           onChange={(event) => setTitle(event.target.value)}
         />
-        <button onClick={createBooke}>Add Book</button>
+        <button className="button" onClick={createBooke}>
+          Add Book
+        </button>
       </form>
     </div>
   );
