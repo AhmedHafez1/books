@@ -1,12 +1,12 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 function BookCreate({ onCeateBook }) {
-  const [title, setTitle] = useState("");
+  const [title, setTitle] = useState('');
 
   const createBooke = (event) => {
     event.preventDefault();
-    onCeateBook({ title });
-    setTitle("");
+    onCeateBook(title);
+    setTitle('');
   };
 
   return (
