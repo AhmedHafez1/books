@@ -5,7 +5,7 @@ function BookShow({ book, onDelete }) {
   const [showEdit, setShowEdit] = useState(false);
 
   let content = <h3>{book.title}</h3>;
-  if (showEdit) content = <BookEdit />;
+  if (showEdit) content = <BookEdit book={book} />;
 
   return (
     <div className="book-show">
