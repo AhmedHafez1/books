@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-function BookEdit({ book }) {
+function BookEdit({ book, onSubmit }) {
   const [title, setTitle] = useState(book.title);
 
   const editBook = (event) => {
     event.preventDefault();
-    console.log(title);
+    onSubmit(book.id, title);
   };
 
   return (
