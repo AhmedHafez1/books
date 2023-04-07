@@ -26,7 +26,8 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="app">
+      <h1>Reading List</h1>
       <BookList books={books} onDelete={deleteBook} onEdit={editBook} />
       <BookCreate onCeateBook={createBook} />
     </div>
