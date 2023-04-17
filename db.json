@@ -1,1 +1,13 @@
-{ "books": [] }
+{
+  "books": [
+    {
+      "title": "Example Book",
+      "author": "John Doe",
+      "publishedDate": "2022-01-01",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "pageCount": 200,
+      "categories": ["Fiction", "Science Fiction"],
+      "id": 2
+    }
+  ]
+}

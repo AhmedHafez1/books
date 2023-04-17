@@ -1,0 +1,43 @@
+@baseUrl = http://localhost:3001
+
+###
+GET {{baseUrl}}/books
+###
+
+###
+POST {{baseUrl}}/books
+Content-Type: application/json
+
+{
+  "title": "Example Book",
+  "author": "John Doe",
+  "publishedDate": "2022-01-01",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  "pageCount": 200,
+  "categories": [
+    "Fiction",
+    "Science Fiction"
+  ]
+}
+###
+
+###
+PUT {{baseUrl}}/books/1
+Content-Type: application/json
+
+{
+  "title": "Updated Book Title",
+  "author": "John Doe",
+  "publishedDate": "2022-01-01",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  "pageCount": 200,
+  "categories": [
+    "Fiction",
+    "Science Fiction"
+  ]
+}
+###
+
+###
+DELETE {{baseUrl}}/books/1
+###
