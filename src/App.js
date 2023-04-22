@@ -1,12 +1,20 @@
 import './index.css';
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import BookList from './components/BookList';
 import BookCreate from './components/BookCreate';
 
 function App() {
+  const bookUrl = 'http://localhost:3001/books/';
   const [books, setBooks] = useState([]);
-  const bookUrl = 'http://localhost:3001/books';
+
+  const fetchBooks = async () => {
+    const response = await axios.get(bookUrl);
+
+    setBooks(response.data);
+  };
+
+  useEffect(() => fetchBooks(), []);
 
   const createBook = async (title) => {
     const response = await axios.post(bookUrl, { title });
@@ -14,17 +22,20 @@ function App() {
     setBooks([...books, response.data]);
   };
 
-  const editBook = (id, title) => {
+  const editBook = async (id, title) => {
+    const response = await axios.put(bookUrl + id, { title });
+
     const updatedBooks = books.map((book) => {
       if (book.id === id) {
-        return { ...book, title };
+        return { ...response.data };
       }
       return { ...book };
     });
     setBooks(updatedBooks);
   };
 
-  const deleteBook = (id) => {
+  const deleteBook = async (id) => {
+    await axios.delete(bookUrl + id);
     const updatedBooks = books.filter((book) => book.id !== id);
     setBooks(updatedBooks);
   };

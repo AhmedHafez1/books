@@ -1,28 +1,16 @@
 {
   "books": [
     {
-      "title": "Example Book",
-      "author": "John Doe",
-      "publishedDate": "2022-01-01",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "pageCount": 200,
-      "categories": [
-        "Fiction",
-        "Science Fiction"
-      ],
-      "id": 2
-    },
-    {
-      "title": "111222",
-      "id": 3
-    },
-    {
-      "title": "kkjk",
+      "title": "3rd Book",
       "id": 4
     },
     {
-      "title": "dvverg",
+      "title": "New Book",
       "id": 5
+    },
+    {
+      "title": "Nice Book",
+      "id": 6
     }
   ]
 }
