@@ -1,13 +1,17 @@
 import './index.css';
+import axios from 'axios';
 import { useState } from 'react';
 import BookList from './components/BookList';
 import BookCreate from './components/BookCreate';
 
 function App() {
   const [books, setBooks] = useState([]);
+  const bookUrl = 'http://localhost:3001/books';
 
-  const createBook = (title) => {
-    setBooks([...books, { id: Math.floor(Math.random() * 1000000), title }]);
+  const createBook = async (title) => {
+    const response = await axios.post(bookUrl, { title });
+
+    setBooks([...books, response.data]);
   };
 
   const editBook = (id, title) => {
