@@ -1,10 +1,11 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import BookEdit from './BookEdit';
-import BookContext from '../context/book';
+import useBookContext from '../hooks/use-book-context';
 
 function BookShow({ book }) {
   const [showEdit, setShowEdit] = useState(false);
-  const { editBook, deleteBook } = useContext(BookContext);
+  const { editBook, deleteBook } = useBookContext();
+
   const handleSubmit = (id, title) => {
     editBook(id, title);
     setShowEdit(false);
