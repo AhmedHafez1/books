@@ -47,9 +47,7 @@ export const Provider = ({ children }) => {
   };
 
   return (
-    <BookContext.Provider valueToShare={valueToShare}>
-      {children}
-    </BookContext.Provider>
+    <BookContext.Provider value={valueToShare}>{children}</BookContext.Provider>
   );
 };
 
